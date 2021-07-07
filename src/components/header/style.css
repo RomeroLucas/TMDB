@@ -1,0 +1,96 @@
+.container-header {
+    width: 100%;
+    min-height: 80px;
+    background-color: cadetblue;
+    padding: 0;
+    margin: 0px 0px 10px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    color: #f1f1f1;
+}
+
+
+.container-header div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    box-sizing: border-box;
+}
+
+/* header left */
+.container-header div:nth-child(1) {
+    width: 10%;
+    font-size: 28px;
+}
+
+/* header middle */
+.container-header div:nth-child(2) {
+    width: 80%;
+}
+
+.container-header div:nth-child(2) input {
+    width: 40%;
+    font-size: 20px;
+    padding: 8px;
+    border-radius: 5px;
+    border-style: solid;
+}
+
+/* header right */
+.container-header div:nth-child(3) {
+    width: 10%;
+}
+
+.container-header div:nth-child(3) span {
+    margin: 10px;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.container-header div:nth-child(3) span:nth-child(1):hover {
+    color: red;
+}
+
+.container-header div:nth-child(3) span:nth-child(2):hover {
+    color: yellow;
+}
+
+
+
+/* header responsive */
+@media screen and (max-width: 600px) {
+.container-header div {
+    margin-top: 5px;
+}
+
+  /* header left */
+.container-header div:nth-child(1) {
+    width: 20%;
+    font-size: 20px;
+}
+
+/* header middle */
+.container-header div:nth-child(2) {
+    width: 80%;
+}
+
+.container-header div:nth-child(2) input {
+    width: 80%;
+    font-size: 15px;
+    padding: 5px;
+}
+
+/* header right */
+.container-header div:nth-child(3) {
+    width: 100%;
+    justify-content: space-around;
+}
+
+.container-header div:nth-child(3) span {
+    margin: 10px;
+    cursor: pointer;
+}  
+}
