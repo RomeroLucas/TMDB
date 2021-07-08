@@ -1,3 +1,5 @@
+import { useSelector } from 'react-redux'
+
 // import de COMPONENTS
 import ItemCart from './itemCart'
 
@@ -11,8 +13,10 @@ const item = {
 }
 
 export default function Aside(props) {
+    const controllers = useSelector(state => state.controllers.display)
+
     return (
-        <aside className='container-aside container-aside-active'>
+        <aside className={`container-aside ${controllers}`}>
             <section>
                 <span>{props.type}</span> <p>Esvaziar</p>
             </section>

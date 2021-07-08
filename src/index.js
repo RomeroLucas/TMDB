@@ -12,13 +12,14 @@ import { store } from './store/store'
 import './global.css'
 
 ReactDOM.render(
+  <Provider store={store}>
   <React.StrictMode>
     <BrowserRouter>
-      <Provider store={store}>
         <App />
-      </Provider>
     </BrowserRouter>
-  </React.StrictMode>,
+  </React.StrictMode>
+  </Provider>
+  ,
   document.getElementById('root')
 );
 

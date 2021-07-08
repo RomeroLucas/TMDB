@@ -1,3 +1,5 @@
+import { useSelector } from 'react-redux'
+
 // aplicando roteamento de páginas
 import { Switch, Route } from 'react-router-dom'
 
@@ -10,10 +12,12 @@ import Home from './views/home'
 import Checkout from './views/checkout'
 
 function App() {
+  const aside = useSelector(state => state.controllers.aside)
+
   return (
     <div className="App">
       <Header />
-      <Aside type="Meu Carrinho" />
+      <Aside type={aside} />
       
       <Switch>
         <Route path='/checkout' component={Checkout} />
