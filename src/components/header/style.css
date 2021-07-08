@@ -1,14 +1,17 @@
 .container-header {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
     min-height: 80px;
     background-color: cadetblue;
     padding: 0;
-    margin: 0px 0px 10px 0px;
     display: flex;
     align-items: center;
     justify-content: space-around;
     flex-wrap: wrap;
     color: #f1f1f1;
+    z-index: 3;
 }
 
 
