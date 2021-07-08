@@ -30,7 +30,7 @@
 .container-aside section:nth-child(1) span {
     font-weight: 400;
 }
-.container-aside section:nth-child(1) a {
+.container-aside section:nth-child(1) p {
     cursor: pointer;
     color: blueviolet;
     text-decoration: underline;

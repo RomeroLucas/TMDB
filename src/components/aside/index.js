@@ -14,7 +14,7 @@ export default function Aside(props) {
     return (
         <aside className='container-aside container-aside-active'>
             <section>
-                <span>{props.type}</span> <a>Esvaziar</a>
+                <span>{props.type}</span> <p>Esvaziar</p>
             </section>
 
             <section>
