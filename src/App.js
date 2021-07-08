@@ -2,7 +2,8 @@
 import { Switch, Route } from 'react-router-dom'
 
 //import de components
-import Header from './components/header';
+import Header from './components/header'
+import Aside from './components/aside'
 
 // import de VIEWS
 import Home from './views/home'
@@ -12,6 +13,7 @@ function App() {
   return (
     <div className="App">
       <Header />
+      <Aside type="Meu Carrinho" />
       
       <Switch>
         <Route path='/checkout' component={Checkout} />

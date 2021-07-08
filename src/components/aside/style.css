@@ -1,0 +1,112 @@
+.container-aside {
+    width: 30%;
+    height: calc(100vh - 80px);
+    position: fixed;
+    right: -30%;
+    top: 80px;
+    border-left: 1px solid #b4b4b4;
+    background-color: #fff;
+    z-index: 2;
+    transition: .5s;
+}
+
+.container-aside-active {
+    right: 0;
+    top: 80px;
+}
+
+.container-aside section {
+    width: 100%;
+}
+
+.container-aside section:nth-child(1) {
+    height: 10%;
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 15px 10px;
+    font-size: 20px;
+}
+.container-aside section:nth-child(1) span {
+    font-weight: 400;
+}
+.container-aside section:nth-child(1) a {
+    cursor: pointer;
+    color: blueviolet;
+    text-decoration: underline;
+}
+
+/* lista de filmes aqui */
+
+.container-aside section:nth-child(2) {
+    max-height: calc(100% - 30%);
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+
+/* finalizar compra */
+
+.container-aside section:nth-child(3) {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.container-aside section:nth-child(3) span {
+    width: 50%;
+    height: 50%;
+    box-sizing: border-box;
+    padding: 5px;
+    font-size: 20px;
+
+}
+.container-aside section:nth-child(3) span:nth-child(2) {
+    text-align: right;
+    font-size: 28px;
+    font-weight: 500;
+}
+
+.container-aside section:nth-child(3) button {
+    width: 95%;
+    height: 40%;
+    font-size: 20px;
+    color: #f1f1f1;
+    background-color: blueviolet;
+    border-style: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* responsive view */
+@media screen and (max-width: 600px) {
+    .container-aside {
+        width: 100%;
+        height: calc(80vh - 80px);
+        position: fixed;
+        right: 0;
+        top: calc(-80vh - 80px);
+        border-left: unset;
+        box-shadow: 0px 2px 3px #b4b4b4;
+        border-radius: 0px 0px 10px 10px;
+        background-color: #fff;
+        z-index: 2;
+        transition: .5s;
+    }
+    
+    .container-aside-active {
+        right: 0;
+        top: 80px;
+    }
+
+    /* lista responsiva */
+    .container-aside section:nth-child(2) {
+        max-height: calc(100% - 40%);
+        padding-right: 0px;
+    }
+}
