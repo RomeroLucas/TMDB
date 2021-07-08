@@ -1,4 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux'
+import { useHistory } from 'react-router'
 
 //import de icons
 import FavoriteIcon from '@material-ui/icons/Favorite'
@@ -10,6 +11,7 @@ import './style.css'
 export default function Header() {
     const controllers = useSelector(state => state.controllers.aside)
     const dispatch = useDispatch()
+    const history = useHistory()
 
     const handleController = (type) => {
         controllers === false ? dispatch({type: 'OPEN-CART', payload: type}) : dispatch({type: 'CLOSE-CART'}) 
@@ -17,7 +19,7 @@ export default function Header() {
 
     return (
         <header className='container-header'>
-            <div>
+            <div onClick={() => history.push('/')} >
                 <span>LOGO</span>
             </div>
 

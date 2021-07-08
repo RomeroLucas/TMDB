@@ -1,4 +1,5 @@
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
+import { useHistory } from 'react-router'
 
 // import de COMPONENTS
 import ItemCart from './itemCart'
@@ -14,6 +15,8 @@ const item = {
 
 export default function Aside(props) {
     const controllers = useSelector(state => state.controllers.display)
+    const history = useHistory()
+    const dispatch = useDispatch()
 
     return (
         <aside className={`container-aside ${controllers}`}>
@@ -42,7 +45,7 @@ export default function Aside(props) {
             { props.type === "Meu Carrinho" ?
             <section>
                 <span>Total: </span> <span>R$ 19,98</span>
-                <button>Finalizar compra</button>
+                <button onClick={() => {history.push('/checkout'); dispatch({type: "CLOSE-CART"})}}>Finalizar compra</button>
             </section>
             : null }
         </aside>

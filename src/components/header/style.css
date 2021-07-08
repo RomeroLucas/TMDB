@@ -27,6 +27,7 @@
 .container-header div:nth-child(1) {
     width: 10%;
     font-size: 28px;
+    cursor: pointer;
 }
 
 /* header middle */
