@@ -11,9 +11,9 @@ export default function MovieContainer(props) {
         <div className='container-movie'>
             <span className='favorite'><FavoriteIcon /></span>
             <span className='container-image'></span>
-            <p style={{fontWeight: 'bolder'}}>{props.data.name}</p>
-            <p><span><StarIcon style={{color: 'yellow'}} /> {props.data.rating}</span><span>{props.data.gender}</span></p>
-            <p>R$ {props.data.price}</p>
+            <p style={{fontWeight: 'bolder'}}>{props.data.title}</p>
+            <p><span><StarIcon style={{color: 'yellow'}} /> {props.data.vote_average}</span><span>{props.data.original_language}</span></p>
+            <p>R$ {props.data.id}</p>
             <button>Adicionar</button>
         </div>
     )
