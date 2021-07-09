@@ -18,7 +18,7 @@
 }
 
 .main-checkout form section {
-    width: 50%;
+    width: 48%;
     height: 400px;
 }
 
@@ -59,5 +59,53 @@
 
 /* formulario direita */
 .main-checkout form section:last-child {
+    position: relative;
+    margin-bottom: 100px;
+}
 
+.main-checkout form section:last-child .label {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    height: 40px;
+    font-size: 20px;
+    font-weight: 400;
+    padding: 10px 10px;
+}
+.main-checkout form section:last-child .label span{
+    padding-left: 5px;
+}
+.main-checkout form section:last-child .label span:nth-child(1) {
+    width: 15%;
+    padding-left: 0px;
+}
+.main-checkout form section:last-child .label span:nth-child(2) {
+    width: 45%;
+}
+.main-checkout form section:last-child .label span:nth-child(3) {
+    width: 10%;
+}
+.main-checkout form section:last-child .label span:nth-child(4) {
+    width: 20%;
+}
+
+.main-checkout .checkout-list {
+    height: 160px;
+    overflow-y: auto;
+}
+
+
+/* responsive view */
+@media screen and (max-width: 600px) {
+    .main-checkout form section {
+        width: 100%;
+        height: 300px;
+    }
+
+    .main-checkout form section:last-child .label {
+        font-size: 14px;
+    }
+    .main-checkout form section:last-child .label span:nth-child(2) {
+        padding-left: 10px;
+    }
 }

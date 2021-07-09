@@ -3,6 +3,7 @@ import { useHistory } from 'react-router'
 
 // import de COMPONENTS
 import ItemCart from './itemCart'
+import PayCheck from '../payCheck'
 
 import './style.css'
 
@@ -42,12 +43,8 @@ export default function Aside(props) {
                 
             </section>
 
-            { props.type === "Meu Carrinho" ?
-            <section>
-                <span>Total: </span> <span>R$ 19,98</span>
-                <button onClick={() => {history.push('/checkout'); dispatch({type: "CLOSE-CART"})}}>Finalizar compra</button>
-            </section>
-            : null }
+            {/* Container de pagamento */}
+            { props.type === "Meu Carrinho" ? <PayCheck /> : null }
         </aside>
     )
 }

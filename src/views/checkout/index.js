@@ -1,5 +1,15 @@
+//import de COMPONENTS
+import ItemCart from '../../components/aside/itemCart'
+import PayCheck from '../../components/payCheck'
 
 import './style.css'
+
+//example
+const item = {
+    name : 'Nome do filme',
+    qto: 1,
+    price: 'R$ 9,99'
+}
 
 export default function Checkout() {
     return (
@@ -27,8 +37,29 @@ export default function Checkout() {
 
                 {/* formulario direita */}
                 <section>
+                    <div className='label'>
+                        <span>Imagem</span>
+                        <span>Nome</span>
+                        <span>Qtd</span>
+                        <span>Preço</span>
+                    </div>
 
+                    {/* lista inicio */}
+                    <div className='checkout-list'>
+                        <ItemCart item={item} />
+                        <ItemCart item={item} />
+                        <ItemCart item={item} />
+                        <ItemCart item={item} />
+                        <ItemCart item={item} />
+                        <ItemCart item={item} />
+                    </div>
+                    {/* lista fim */}
+
+                    {/* Paycheck */}
+                    <PayCheck type='checkout-paycheck' />
                 </section>
+
+
             </form>
         </main>
     )
