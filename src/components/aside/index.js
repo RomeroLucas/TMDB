@@ -1,5 +1,4 @@
 import { useSelector, useDispatch } from 'react-redux'
-import { useHistory } from 'react-router'
 
 // import de COMPONENTS
 import ItemCart from './itemCart'
@@ -16,30 +15,24 @@ const item = {
 
 export default function Aside(props) {
     const controllers = useSelector(state => state.controllers.display)
-    const history = useHistory()
+    const cartList = useSelector(state => state.cart)
     const dispatch = useDispatch()
 
     return (
         <aside className={`container-aside ${controllers}`}>
             <section>
-                <span>{props.type}</span> <p>Esvaziar</p>
+                <span>{props.type}</span> <p onClick={() => dispatch({type: 'EMPTY-CART'})}>Esvaziar</p>
             </section>
 
             <section>
                 {/* lista de filmes aqui */}
-                <ItemCart item={item} />
-                <ItemCart item={item} />
-                <ItemCart item={item} />
-                <ItemCart item={item} />
-                <ItemCart item={item} />
-                <ItemCart item={item} />
-                <ItemCart item={item} />
-                <ItemCart item={item} />
-                <ItemCart item={item} />
-                <ItemCart item={item} />
-                <ItemCart item={item} />
-                <ItemCart item={item} />
-                
+                {
+                    // render cart
+                    props.type === "Meu Carrinho" && cartList.length > 0 ?
+                    cartList.map(item => <ItemCart key={item.movie.id} item={item.movie} price={item.price} />) :
+                    <p>Seu carrinho está vazio</p>
+                }
+    
                 
             </section>
 

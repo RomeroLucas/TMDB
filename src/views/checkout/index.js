@@ -1,17 +1,15 @@
+import { useSelector } from 'react-redux'
+
 //import de COMPONENTS
 import ItemCart from '../../components/aside/itemCart'
 import PayCheck from '../../components/payCheck'
 
 import './style.css'
 
-//example
-const item = {
-    name : 'Nome do filme',
-    qto: 1,
-    price: 'R$ 9,99'
-}
 
 export default function Checkout() {
+    const cartList = useSelector(state => state.cart)
+
     return (
         <main className='main-checkout'>
             <h1>Finalizar Compra</h1>
@@ -46,12 +44,9 @@ export default function Checkout() {
 
                     {/* lista inicio */}
                     <div className='checkout-list'>
-                        <ItemCart item={item} />
-                        <ItemCart item={item} />
-                        <ItemCart item={item} />
-                        <ItemCart item={item} />
-                        <ItemCart item={item} />
-                        <ItemCart item={item} />
+                        {cartList.length > 0 ?
+                        cartList.map(item => <ItemCart key={item.movie.id} item={item.movie} price={item.price} />) :
+                        <p>Seu carrinho está vazio</p>}
                     </div>
                     {/* lista fim */}
 
