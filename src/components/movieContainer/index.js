@@ -15,8 +15,8 @@ export default function MovieContainer(props) {
             <span className='container-image'></span>
             <p style={{fontWeight: 'bolder'}}>{props.data.title}</p>
             <p><span><StarIcon style={{color: 'yellow'}} /> {props.data.vote_average}</span><span>{props.data.original_language}</span></p>
-            <p>R$ {props.price}</p>
-            <button onClick={() => dispatch({type: 'ADD-CART', payload: { movie: props.data, price: props.price}})} >Adicionar</button>
+            <p>R$ {props.data.vote_average}</p>
+            <button onClick={() => dispatch({type: 'ADD-CART', payload: { movie: props.data, price: props.data.vote_average}})} >Adicionar</button>
         </div>
     )
 }
