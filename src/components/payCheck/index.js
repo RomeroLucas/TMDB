@@ -12,10 +12,23 @@ export default function PayCheck(props) {
 
     sum = cartList.reduce((acc, obj) => {return acc + obj.price}, 0 )
 
+    const handleClick = () => {
+        history.push('/checkout'); dispatch({type: "CLOSE-CART"})
+    }
+    const finishHandle = (e) => {
+        e.preventDefault()
+        cartList.length > 0 ? dispatch({type: 'MODAL-SUCCESS'}) : dispatch({type: 'MODAL-FAILED'})
+    }
+
     return (
         <div className={`container-paycheck ${props.type}`}>
             <span>Total: </span> <span>R$ {sum}</span>
-            <button onClick={() => {history.push('/checkout'); dispatch({type: "CLOSE-CART"})}}>Finalizar compra</button>
+            {
+                props.type === 'checkout-paycheck' ?
+                <button onClick={finishHandle}>Finalizar</button> :
+                <button onClick={handleClick}>Finalizar compra</button>
+            }
+            
         </div>
     )
 }

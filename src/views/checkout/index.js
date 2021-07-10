@@ -1,17 +1,23 @@
 import { useSelector } from 'react-redux'
+import { useState } from 'react'
 
 //import de COMPONENTS
 import ItemCart from '../../components/aside/itemCart'
 import PayCheck from '../../components/payCheck'
+
 
 import './style.css'
 
 
 export default function Checkout() {
     const cartList = useSelector(state => state.cart)
+    const modal = useSelector(state => state.controllers.modal)
+
 
     return (
         <main className='main-checkout'>
+            {/* Modal render */}
+            {modal}
             <h1>Finalizar Compra</h1>
 
             <form>
