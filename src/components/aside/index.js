@@ -6,12 +6,7 @@ import PayCheck from '../payCheck'
 
 import './style.css'
 
-//example
-const item = {
-    name : 'Nome do filme',
-    qto: 1,
-    price: 'R$ 9,99'
-}
+
 
 export default function Aside(props) {
     const controllers = useSelector(state => state.controllers.display)
