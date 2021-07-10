@@ -11,7 +11,7 @@ export default function MovieContainer(props) {
 
     return (
         <div className='container-movie'>
-            <span className='favorite'><FavoriteIcon /></span>
+            <span onClick={() => dispatch({type: 'ADD-FAVORITE', payload: { movie: props.data, price: props.data.vote_average}})}  className='favorite'><FavoriteIcon /></span>
             <span className='container-image'></span>
             <p style={{fontWeight: 'bolder'}}>{props.data.title}</p>
             <p><span><StarIcon style={{color: 'yellow'}} /> {props.data.vote_average}</span><span>{props.data.original_language}</span></p>
