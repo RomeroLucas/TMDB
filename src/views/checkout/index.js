@@ -26,9 +26,9 @@ export default function Checkout() {
                     <div><input className='input-full' type='text' placeholder='Nome Completo' /></div>
                     <div>
                         <input className='input-half' style={{width: '47%'}} type='text' placeholder='CPF' />
-                        <input className='input-half' style={{width: '47%'}} type='text' placeholder='Celular' />
+                        <input className='input-half' style={{width: '47%'}} type='tel' placeholder='Celular' />
                     </div>
-                    <div><input className='input-full' type='text' placeholder='E-mail' /></div>
+                    <div><input className='input-full' type='email' placeholder='E-mail' /></div>
                     <div>
                         <input className='input-half' style={{width: '35%'}} type='text' placeholder='CEP' />
                         <input className='input-half' style={{width: '60%'}} type='text' placeholder='Endereço' />
